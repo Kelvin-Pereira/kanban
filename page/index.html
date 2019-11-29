@@ -3,6 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
     <title>Kamban do Kelvin</title>
     <link rel="stylesheet" href="../assets/kanban.css" />
@@ -25,25 +26,30 @@
     </style>
   </head>
   <body>
-    <div id="Kanban"></div>
 
-    <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.4.1.min.js"></script>
-
+    <div class="container">
+      <div id="Kanban"></div>
+    </div>
+    
     <script src="../assets/kanban.js"></script>
     <script>
+
       var KanbanTest = new jKanban({
         element: "#Kanban",
         gutter: "5px",
         widthBoard: "280px",
         itemHandleOptions:{
-          enabled: true,
+        enabled: true,
         },
         click: function(el) {
           console.log("Disparar em todos os itens clicados!");
         },
         dropEl: function(el, target, source, sibling){
           console.log(target.parentElement.getAttribute('data-id'));
-          // console.log(el, target, source, sibling)
+
+          console.log(target) //target para onde foi
+          console.log(source) //onde estava
+
         },
         buttonClick: function(el, boardId) {
           console.log(boardId);
@@ -59,19 +65,21 @@
                 id: "_test_delete",
                 title: "tenta olhar no console",
                 numChamado: 456,
-                drag: function(el, source) {
-                  console.log("START DRAG: " + el.dataset.eid);
-                },
-                dragend: function(el) {
-                  console.log("END DRAG: " + el.dataset.eid);
-                },
-                drop: function(el) {
-                  console.log("DROPPED: " + el.dataset.eid);
-                }
+                descricao: "descrição",
+                // drag: function(el, source) {
+                //   console.log("START DRAG: " + el.dataset.eid);
+                // },
+                // dragend: function(el) {
+                //   console.log("END DRAG: " + el.dataset.eid);
+                // },
+                // drop: function(el) {
+                //   console.log("DROPPED: " + el.dataset.eid);
+                // }
               },
               {
                 title: "Click Kelvin!",
                 numChamado: 45,
+                descricao: "descrição",
                 click: function(el) {
                   alert("Porq ?");
                 },
@@ -80,14 +88,17 @@
               {
                 title: "correr?",
                 numChamado: 454,
+                descricao: "descrição",
               },
               {
                 title: "Tudo Certo",
                 numChamado: 457,
+                descricao: "descrição",
               },
               {
                 title: "ela etsá gravida!",
                 numChamado: 956,
+                descricao: "descrição",
               }
             ]
           },
@@ -99,6 +110,7 @@
               {
                 title: "Não mexa!",
                 numChamado: 458,
+                descricao: "descrição",
               }
             ]
           },
@@ -118,14 +130,17 @@
             {
                 title: "não faça!",
                 numChamado: 549,
+                descricao: "descrição",
               },
               {
                 title: "quer mesmo correr?",
                 numChamado: 550,
+                descricao: "descrição",
               },
               {
                 title: "Click Kelvin!",
                 numChamado: 555,
+                descricao: "descrição",
                 click: function(el) {
                   alert("Porq ?");
                 },
@@ -135,6 +150,12 @@
           }
         ]
       });
+
+        console.log(KanbanTest.boardContainer[0].childNodes.length)
+        console.log(KanbanTest.boardContainer[1].childNodes.length)
+        console.log(KanbanTest.boardContainer[2].childNodes.length)
+        console.log(KanbanTest.boardContainer[3].childNodes.length)
+
     </script>
   </body>
 </html>

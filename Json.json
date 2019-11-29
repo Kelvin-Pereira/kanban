@@ -2,56 +2,48 @@
     "board": [
         {
            "id": "Atribuido",
-            "title": "Em espera", 
+            "title": "Atribuido", 
             "class": "azulclaro",
             "itens":[
                 {
                     "id": 1,
                     "title": "title",
-                    "numChamado": 123
+                    "numChamado": 123,
+                    "descricao": "descrição"
                 },
                 {
                     "id": 1,
                     "title": "title",
-                    "numChamado": 123
+                    "numChamado": 123,
+                    "descricao": "descrição"
                 }
-            ] 
+            ]
         },
         {
-            "id": "Atribuido",
-             "title": "Em atendimento", 
+            "id": "Pendende",
+             "title": "Pendende", 
              "class": "azul",
              "itens":[
-                 {
-                     "id": 1,
-                     "title": "title",
-                     "numChamado": 123
-                 }
-             ] 
-         },
-         {
-            "id": "Pendende",
-             "title": "Pendente", 
-             "class": "amarelo",
-             "itens":[
-                 {
-                     "id": 1,
-                     "title": "title",
-                     "numChamado": 123
-                 }
-             ] 
+                {
+                    "id": 1,
+                    "title": "title",
+                    "numChamado": 123,
+                    "descricao": "descrição"
+                }
+            ]
          },
          {
             "id": "Solucionado",
-             "title": "Atendido", 
-             "class": "verde",
+             "title": "Solucionado", 
+             "class": "amarelo",
              "itens":[
-                 {
-                     "id": 1,
-                     "title": "title",
-                     "numChamado": 123
-                 }
-             ] 
-         }
+                {
+                    "id": 1,
+                    "title": "title",
+                    "numChamado": 123,
+                    "descricao": "descrição"
+                }
+            ] 
+        }
     ]
 }

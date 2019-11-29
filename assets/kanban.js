@@ -266,6 +266,7 @@
         });
         headerBoard.innerHTML =
           '<div class="kanban-title-boards">' + board.title + "</div>";   // add quanticades de card
+          // '<div class="kanban-title-boards">' + board.title + "<span class'size' id='size'>"+ board.item.length + "</span>" + "</div>";   // add quanticades de card
           var contentBoard = document.createElement("main");
         contentBoard.classList.add("kanban-drag");
         if (board.bodyClass !== "" && board.bodyClass !== undefined)
@@ -289,7 +290,7 @@
               nodeItem.classList.add(cl);
             })
           }
-          nodeItem.innerHTML = __buildItemTitle(itemKanban.title,itemKanban.numChamado);
+          nodeItem.innerHTML = __buildItemTitle(itemKanban.title, itemKanban.numChamado, itemKanban.descricao);
           nodeItem.clickfn = itemKanban.click;
           nodeItem.dragfn = itemKanban.drag;
           nodeItem.dragendfn = itemKanban.dragend;
@@ -454,8 +455,8 @@
       }
     }
 
-    function __buildItemTitle(title,numChamado) {
-      var result = (title + '<div class="item_handle numChamado" id="numChamado"> N° ' + numChamado +'<div>');
+    function __buildItemTitle(title, numChamado, descricao) {
+      var result = (title + '<div class="item_handle numChamado" id="numChamado"> N° ' + numChamado +'</div>');
       if (self.options.itemHandleOptions.enabled) {
         if ((self.options.itemHandleOptions.customHandler || undefined) === undefined) {
           var customCssHandler = self.options.itemHandleOptions.customCssHandler;

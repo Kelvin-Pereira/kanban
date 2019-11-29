@@ -202,3 +202,39 @@
   border-top: 10px solid #3CB371;
 }
 
+body {
+  background-color: #eee;
+  color: #3c4858;
+  font-weight: 300;
+}
+
+/* background torre */
+main.kanban-drag {
+  background: white;
+  bottom: 6px;
+}
+
+/* contador */
+span#size {
+  margin-left: 145px;
+}
+
+/* titulo da torre */
+.kanban-title-boards {
+  margin-left: 19px;
+  font-weight: bold;
+  color: #3c4858;
+  font-size: 19px;
+}
+
+/* Sombra card */
+.kanban-item.item_handle {
+  border-radius: 8px;
+  box-shadow: 0px 0px 6px 1px #0000004f;
+}
+
+/* Font card */
+.kanban-item.item_handle {
+  font-weight: bold;
+  color: #3c4858;
+}
