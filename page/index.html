@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Kamban do Kelvin</title>
+    <link rel="stylesheet" href="../assets/kanban.css" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Lato"
+      rel="stylesheet"
+    />
+
+    <style>
+      body {
+        font-family: "Lato";
+        margin: 0;
+        padding: 0;
+      }
+
+      #myKanban {
+        overflow-x: auto;
+        padding: 20px 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="Kanban"></div>
+
+    <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.4.1.min.js"></script>
+
+    <script src="../assets/kanban.js"></script>
+    <script>
+      var KanbanTest = new jKanban({
+        element: "#Kanban",
+        gutter: "5px",
+        widthBoard: "280px",
+        itemHandleOptions:{
+          enabled: true,
+        },
+        click: function(el) {
+          console.log("Disparar em todos os itens clicados!");
+        },
+        dropEl: function(el, target, source, sibling){
+          console.log(target.parentElement.getAttribute('data-id'));
+          // console.log(el, target, source, sibling)
+        },
+        buttonClick: function(el, boardId) {
+          console.log(boardId);
+        },
+        addItemButton: true,
+        boards: [
+          {
+            id: "Atribuido",
+            title: "Atribuido",
+            class: "azulclaro",
+            item: [
+              {
+                id: "_test_delete",
+                title: "tenta olhar no console",
+                numChamado: 456,
+                drag: function(el, source) {
+                  console.log("START DRAG: " + el.dataset.eid);
+                },
+                dragend: function(el) {
+                  console.log("END DRAG: " + el.dataset.eid);
+                },
+                drop: function(el) {
+                  console.log("DROPPED: " + el.dataset.eid);
+                }
+              },
+              {
+                title: "Click Kelvin!",
+                numChamado: 45,
+                click: function(el) {
+                  alert("Porq ?");
+                },
+                class: ["peppe", "bello"]
+              },
+              {
+                title: "correr?",
+                numChamado: 454,
+              },
+              {
+                title: "Tudo Certo",
+                numChamado: 457,
+              },
+              {
+                title: "ela etsá gravida!",
+                numChamado: 956,
+              }
+            ]
+          },
+          {
+            id: "Planejado",
+            title: "Planejado",
+            class: "azul",
+            item: [
+              {
+                title: "Não mexa!",
+                numChamado: 458,
+              }
+            ]
+          },
+          {
+            id: "Pendende",
+            title: "Pendende",
+            class: "amarelo",
+            item: [
+            
+            ]
+          },
+          {
+            id: "Solucionado",
+            title: "Solucionado",
+            class: "verde",
+            item: [
+            {
+                title: "não faça!",
+                numChamado: 549,
+              },
+              {
+                title: "quer mesmo correr?",
+                numChamado: 550,
+              },
+              {
+                title: "Click Kelvin!",
+                numChamado: 555,
+                click: function(el) {
+                  alert("Porq ?");
+                },
+                class: ["peppe", "bello"]
+              }
+            ]
+          }
+        ]
+      });
+    </script>
+  </body>
+</html>

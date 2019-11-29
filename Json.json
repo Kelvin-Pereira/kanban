@@ -1,0 +1,57 @@
+{
+    "board": [
+        {
+           "id": "Atribuido",
+            "title": "Em espera", 
+            "class": "azulclaro",
+            "itens":[
+                {
+                    "id": 1,
+                    "title": "title",
+                    "numChamado": 123
+                },
+                {
+                    "id": 1,
+                    "title": "title",
+                    "numChamado": 123
+                }
+            ] 
+        },
+        {
+            "id": "Atribuido",
+             "title": "Em atendimento", 
+             "class": "azul",
+             "itens":[
+                 {
+                     "id": 1,
+                     "title": "title",
+                     "numChamado": 123
+                 }
+             ] 
+         },
+         {
+            "id": "Pendende",
+             "title": "Pendente", 
+             "class": "amarelo",
+             "itens":[
+                 {
+                     "id": 1,
+                     "title": "title",
+                     "numChamado": 123
+                 }
+             ] 
+         },
+         {
+            "id": "Solucionado",
+             "title": "Atendido", 
+             "class": "verde",
+             "itens":[
+                 {
+                     "id": 1,
+                     "title": "title",
+                     "numChamado": 123
+                 }
+             ] 
+         }
+    ]
+}
