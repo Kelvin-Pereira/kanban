@@ -214,9 +214,21 @@ main.kanban-drag {
   bottom: 6px;
 }
 
-/* contador */
-span#size {
-  margin-left: 145px;
+/* contador card*/
+span#Atribuido {
+  margin-left: 110px;
+}
+/* contador card*/
+span#Planejado {
+  margin-left: 110px;
+}
+/* contador card*/
+span#Pendende {
+  margin-left: 105px;
+}
+/* contador card*/
+span#Solucionado {
+  margin-left: 87px;
 }
 
 /* titulo da torre */

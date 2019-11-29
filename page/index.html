@@ -12,18 +12,6 @@
       rel="stylesheet"
     />
 
-    <style>
-      body {
-        font-family: "Lato";
-        margin: 0;
-        padding: 0;
-      }
-
-      #myKanban {
-        overflow-x: auto;
-        padding: 20px 0;
-      }
-    </style>
   </head>
   <body>
 
@@ -33,6 +21,14 @@
     
     <script src="../assets/kanban.js"></script>
     <script>
+
+      // seta a quantidade de cards na torre
+      function size() {
+        document.getElementById("Atribuido").innerHTML    = this.KanbanTest.boardContainer[0].childNodes.length;
+        document.getElementById("Planejado").innerHTML    = this.KanbanTest.boardContainer[1].childNodes.length;
+        document.getElementById("Pendende").innerHTML     = this.KanbanTest.boardContainer[2].childNodes.length;
+        document.getElementById("Solucionado").innerHTML  = this.KanbanTest.boardContainer[3].childNodes.length;
+      }
 
       var KanbanTest = new jKanban({
         element: "#Kanban",
@@ -47,8 +43,11 @@
         dropEl: function(el, target, source, sibling){
           console.log(target.parentElement.getAttribute('data-id'));
 
-          console.log(target) //target para onde foi
-          console.log(source) //onde estava
+          //console.log(target) //target para onde foi
+          //console.log(source) //onde estava
+          
+          // seta os novos valores
+          size()
 
         },
         buttonClick: function(el, boardId) {
@@ -151,10 +150,7 @@
         ]
       });
 
-        console.log(KanbanTest.boardContainer[0].childNodes.length)
-        console.log(KanbanTest.boardContainer[1].childNodes.length)
-        console.log(KanbanTest.boardContainer[2].childNodes.length)
-        console.log(KanbanTest.boardContainer[3].childNodes.length)
+      
 
     </script>
   </body>

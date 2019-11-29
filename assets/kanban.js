@@ -265,8 +265,8 @@
           headerBoard.classList.add(value);
         });
         headerBoard.innerHTML =
-          '<div class="kanban-title-boards">' + board.title + "</div>";   // add quanticades de card
-          // '<div class="kanban-title-boards">' + board.title + "<span class'size' id='size'>"+ board.item.length + "</span>" + "</div>";   // add quanticades de card
+          // '<div class="kanban-title-boards">' + board.title + "</div>";   // add quanticades de card
+          '<div class="kanban-title-boards">' + board.title + "<span class='size' id='"+ board.title +"'>"+ board.item.length +"</span></div>";   // add quanticades de card
           var contentBoard = document.createElement("main");
         contentBoard.classList.add("kanban-drag");
         if (board.bodyClass !== "" && board.bodyClass !== undefined)
@@ -477,6 +477,7 @@
     }
 
     this.init();
+    
   };
 })();
 
