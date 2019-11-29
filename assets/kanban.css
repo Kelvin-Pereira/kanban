@@ -221,10 +221,11 @@ span#size {
 
 /* titulo da torre */
 .kanban-title-boards {
-  margin-left: 19px;
+  margin-left: 15px;
   font-weight: bold;
   color: #3c4858;
   font-size: 19px;
+  margin-top: -7px;
 }
 
 /* Sombra card */
