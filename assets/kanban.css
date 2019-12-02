@@ -243,7 +243,7 @@ span#Solucionado {
 /* Sombra card */
 .kanban-item.item_handle {
   border-radius: 8px;
-  box-shadow: 0px 0px 6px 1px #0000004f;
+  box-shadow: 0px 0px 7px -1px #0000004f;
 }
 
 /* Font card */
