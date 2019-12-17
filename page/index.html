@@ -15,22 +15,35 @@
   </head>
   <body>
 
+  <!-- jQuery library -->
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+
+  <!-- Popper -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+
+  <!-- Latest compiled and minified Bootstrap JavaScript -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+<!-- Initialize Bootstrap functionality -->
+<script>
+  // Initialize tooltip component
+  $(function () {
+    $('[data-toggle="tooltip"]').tooltip()
+  })
+
+  // Initialize popover component
+  $(function () {
+    $('[data-toggle="popover"]').popover()
+  })
+</script>
+
     <div class="container">
       <div id="Kanban"></div>
     </div>
     
     <script src="../assets/kanban.js"></script>
     <script>
-
-      // seta a quantidade de cards na torre
-      function size() {
-        document.getElementById("Atribuido").innerHTML    = this.KanbanTest.boardContainer[0].childNodes.length;
-        document.getElementById("Planejado").innerHTML    = this.KanbanTest.boardContainer[1].childNodes.length;
-        document.getElementById("Pendende").innerHTML     = this.KanbanTest.boardContainer[2].childNodes.length;
-        document.getElementById("Solucionado").innerHTML  = this.KanbanTest.boardContainer[3].childNodes.length;
-      }
-
-      var KanbanTest = new jKanban({
+      var KanbanGLPI = new jKanban({
         element: "#Kanban",
         gutter: "5px",
         widthBoard: "280px",
@@ -63,8 +76,9 @@
               {
                 id: "_test_delete",
                 title: "tenta olhar no console",
-                numChamado: 456,
+                numChamado: 45612,
                 descricao: "descrição",
+                prioridade: 'Média',
                 // drag: function(el, source) {
                 //   console.log("START DRAG: " + el.dataset.eid);
                 // },
@@ -77,8 +91,9 @@
               },
               {
                 title: "Click Kelvin!",
-                numChamado: 45,
+                numChamado: 45123,
                 descricao: "descrição",
+                prioridade: 'Média',
                 click: function(el) {
                   alert("Porq ?");
                 },
@@ -86,18 +101,27 @@
               },
               {
                 title: "correr?",
-                numChamado: 454,
+                numChamado: 45412,
                 descricao: "descrição",
+                prioridade: 'Média',
               },
               {
                 title: "Tudo Certo",
-                numChamado: 457,
+                numChamado: 45437,
                 descricao: "descrição",
+                prioridade: 'Média',
               },
               {
                 title: "ela etsá gravida!",
-                numChamado: 956,
+                numChamado: 95613,
                 descricao: "descrição",
+                prioridade: 'Alta',
+              },
+              {
+                title: "ela etsá gravida!",
+                numChamado: 95631,
+                descricao: "descrição",
+                prioridade: 'Alta',
               }
             ]
           },
@@ -108,8 +132,9 @@
             item: [
               {
                 title: "Não mexa!",
-                numChamado: 458,
+                numChamado: 45814,
                 descricao: "descrição",
+                prioridade: 'Critical',
               }
             ]
           },
@@ -128,18 +153,21 @@
             item: [
             {
                 title: "não faça!",
-                numChamado: 549,
+                numChamado: 54912,
                 descricao: "descrição",
+                prioridade: 'Muito alta',
               },
               {
                 title: "quer mesmo correr?",
-                numChamado: 550,
+                numChamado: 55013,
                 descricao: "descrição",
+                prioridade: 'Baixa',
               },
               {
                 title: "Click Kelvin!",
-                numChamado: 555,
+                numChamado: 55511,
                 descricao: "descrição",
+                prioridade: 'Muito baixa',
                 click: function(el) {
                   alert("Porq ?");
                 },
@@ -150,8 +178,15 @@
         ]
       });
 
-      
+       // seta a quantidade de cards na torre
+       function size() {
+        document.getElementById("Atribuido").innerHTML    = this.KanbanGLPI.boardContainer[0].childNodes.length;
+        document.getElementById("Planejado").innerHTML    = this.KanbanGLPI.boardContainer[1].childNodes.length;
+        document.getElementById("Pendende").innerHTML     = this.KanbanGLPI.boardContainer[2].childNodes.length;
+        document.getElementById("Solucionado").innerHTML  = this.KanbanGLPI.boardContainer[3].childNodes.length;
+      }
 
     </script>
+
   </body>
 </html>

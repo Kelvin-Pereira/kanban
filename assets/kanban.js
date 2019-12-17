@@ -184,9 +184,9 @@
         nodeItem.setAttribute("data-eid", element.id);
       }
       if(element.class && Array.isArray(element.class)) {
-	element.class.forEach( function(cl){
-	  nodeItem.classList.add(cl);
-	})
+    element.class.forEach( function(cl){
+      nodeItem.classList.add(cl);
+    })
       }
       nodeItem.innerHTML = __buildItemTitle(element.title);
       nodeItem.clickfn = element.click;
@@ -290,7 +290,7 @@
               nodeItem.classList.add(cl);
             })
           }
-          nodeItem.innerHTML = __buildItemTitle(itemKanban.title, itemKanban.numChamado, itemKanban.descricao);
+          nodeItem.innerHTML = __buildItemTitle(itemKanban.title, itemKanban.numChamado, itemKanban.descricao, itemKanban.prioridade);
           nodeItem.clickfn = itemKanban.click;
           nodeItem.dragfn = itemKanban.drag;
           nodeItem.dragendfn = itemKanban.dragend;
@@ -298,7 +298,7 @@
           __appendCustomProperties(nodeItem, itemKanban);
           __onclickHandler(nodeItem);
           if (self.options.itemHandleOptions.enabled) {
-            nodeItem.style.cursor = "default";
+            nodeItem.style.cursor = "pointer";
           }
           contentBoard.appendChild(nodeItem);
         }
@@ -379,12 +379,12 @@
       }
 
  
-	    for(var i = 0; i < self.options.boards.length; i++) {
-		    if(self.options.boards[i].id === board) {
-			    self.options.boards.splice(i, 1);
-			    break;
-		    }
-	    }
+        for(var i = 0; i < self.options.boards.length; i++) {
+            if(self.options.boards[i].id === board) {
+                self.options.boards.splice(i, 1);
+                break;
+            }
+        }
 
       return self;
     };
@@ -454,9 +454,9 @@
         self.container.childNodes[i].dataset.order = index++;
       }
     }
-
-    function __buildItemTitle(title, numChamado, descricao) {
-      var result = (title + '<div class="item_handle numChamado" id="numChamado"> N° ' + numChamado +'</div>');
+// popover
+    function __buildItemTitle(title, numChamado, descricao, prioridade) {
+      var result = (title + '<br><a href="" class="item_handle numChamado" id="numChamado" data-toggle="popover" data-trigger="hover" data-placement="right" data-content="'+ title +'" >'+'#'+numChamado +'</a>' + '<span id="'+ prioridade.replace(/\s/gi, '') +'" class="' + prioridade.replace(/\s/gi, '') +'">'+ prioridade +'</span><br>');
       if (self.options.itemHandleOptions.enabled) {
         if ((self.options.itemHandleOptions.customHandler || undefined) === undefined) {
           var customCssHandler = self.options.itemHandleOptions.customCssHandler;
